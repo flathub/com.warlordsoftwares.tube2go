@@ -57,6 +57,7 @@ modules:
   - ffmpeg.json
   - mpv.json
   - python3-req.json
+  - python3-yt-dlp.json
   - name: tube2go
     buildsystem: simple
     build-commands:
@@ -69,8 +70,8 @@ modules:
       - install -Dm644 ${FLATPAK_DEST}/tube2go/share/metainfo/com.warlordsoftwares.tube2go.metainfo.xml ${FLATPAK_DEST}/share/metainfo/com.warlordsoftwares.tube2go.metainfo.xml
     sources:
       - type: archive
-        url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_TUBE2GO-2024.7.5.tar.gz
-        sha256: 55655718250088914af357f26f88e0e897121a276e6668606ca7c1cec3bb5d5e
+        url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_TUBE2GO-2024.7.11.tar.gz
+        sha256: e9281f90fcc2f23c1c46271d56ab8392cb6facfc1fb6f6cf531bc0b6d4b548ac
 
 
 
