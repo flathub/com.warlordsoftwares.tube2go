@@ -11,14 +11,13 @@ build-options:
     - BASEAPP_REMOVE_WEBENGINE=1
 command: tube2go.sh
 finish-args:
-  - --share=network
   - --share=ipc
-  - --socket=fallback-x11
-  - --socket=wayland
+  - --socket=x11
+  - --device=dri
+  - --share=network
   - --filesystem=xdg-download
   - --filesystem=xdg-documents
   - --filesystem=xdg-run/gvfsd
-  - --device=dri
   - --socket=pulseaudio
 tags:
   - proprietary
