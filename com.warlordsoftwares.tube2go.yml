@@ -11,13 +11,14 @@ build-options:
     - BASEAPP_REMOVE_WEBENGINE=1
 command: tube2go.sh
 finish-args:
-  - --share=ipc
-  - --socket=x11
-  - --device=dri
   - --share=network
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
   - --filesystem=xdg-download
   - --filesystem=xdg-documents
   - --filesystem=xdg-run/gvfsd
+  - --device=dri
   - --socket=pulseaudio
 tags:
   - proprietary
@@ -70,7 +71,7 @@ modules:
     sources:
       - type: archive
         url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_TUBE2GO-2024.9.1.tar.gz
-        sha256: 5326613f8c3c5d3ec8346ed6103b898ada7ef388821bed9831f25eb476937e30
+        sha256: 44eab25d6c37fcdb457831ec6abe96af023b445b4a6bd9c2418d65abeecc7f1c
 
 
 
