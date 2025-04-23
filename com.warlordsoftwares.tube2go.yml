@@ -70,8 +70,8 @@ modules:
       - install -Dm644 ${FLATPAK_DEST}/tube2go/share/metainfo/com.warlordsoftwares.tube2go.metainfo.xml ${FLATPAK_DEST}/share/metainfo/com.warlordsoftwares.tube2go.metainfo.xml
     sources:
       - type: archive
-        url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_TUBE2GO-2025.4.4.tar.gz
-        sha256: 2ce864493c9eff8421a4c28d12d28126a75cdf286e6bcb2fc2a9be388af84a6b
+        url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_TUBE2GO-2025.4.22.tar.gz
+        sha256: 267fbe78f7ee2063d6185fe0fd9ebf902c2ab23992cc7c905a9616c772ce419e
 
 
 
