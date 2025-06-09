@@ -1,15 +1,14 @@
 app-id: com.warlordsoftwares.tube2go
 runtime: org.kde.Platform
-runtime-version: 5.15-23.08
+runtime-version: 5.15-24.08
 sdk: org.kde.Sdk
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: '5.15-23.08'
-cleanup-commands:
-  - /app/cleanup-BaseApp.sh
-build-options:
-  env:
-    - BASEAPP_REMOVE_WEBENGINE=1
+base-version: '5.15-24.08'
 command: tube2go.sh
+
+tags:
+  - proprietary
+
 finish-args:
   - --share=network
   - --share=ipc
@@ -20,27 +19,20 @@ finish-args:
   - --filesystem=xdg-run/gvfsd
   - --device=dri
   - --socket=pulseaudio
-tags:
-  - proprietary
+  - --env=QTWEBENGINEPROCESS_PATH=/app/bin/QtWebEngineProcess
+  - --env=QTWEBENGINE_CHROMIUM_FLAGS=--no-sandbox
+  - --env=QTWEBENGINE_DISABLE_SANDBOX=1
+  - --env=QTWEBENGINE_RESOURCES_PATH=/app/share/qt5/resources
+  - --env=QTWEBENGINE_LOCALES_PATH=/app/share/qt5/translations/qtwebengine_locales
+
+cleanup-commands:
+  - /app/cleanup-BaseApp.sh
+
 cleanup:
   - /include
   - /lib/pkgconfig
+
 modules:
-  - name: libass
-    sources:
-      - type: archive
-        url: https://github.com/libass/libass/releases/download/0.17.1/libass-0.17.1.tar.xz
-        sha256: f0da0bbfba476c16ae3e1cfd862256d30915911f7abaa1b16ce62ee653192784
-      - type: script
-        commands:
-          - autoreconf -fiv
-        dest-filename: autogen.sh
-    cleanup:
-      - /include
-      - /lib/pkgconfig
-      - /share
-      - '*.a'
-      - '*.la'
   - name: luajit
     no-autogen: true
     make-install-args:
@@ -54,10 +46,11 @@ modules:
       - type: git
         url: https://github.com/LuaJIT/LuaJIT.git
         commit: 4c2441c16ce3c4e312aaefecc6d40c4fe21de97c
-  - ffmpeg.json
-  - mpv.json
+
+  - ffmpeg_mpv.json
   - python3-req.json
   - python3-yt-dlp.json
+
   - name: tube2go
     buildsystem: simple
     build-commands:
@@ -70,8 +63,8 @@ modules:
       - install -Dm644 ${FLATPAK_DEST}/tube2go/share/metainfo/com.warlordsoftwares.tube2go.metainfo.xml ${FLATPAK_DEST}/share/metainfo/com.warlordsoftwares.tube2go.metainfo.xml
     sources:
       - type: archive
-        url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_TUBE2GO-2025.5.23.tar.gz
-        sha256: 652be23844e71f0cd820a961460d5ea78fb3690a8cdba795ebede7debfcad291
+        url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_TUBE2GO.tar.gz
+        sha256: a0d35a172238ead57a723b0ba7a00446e3b45db94a2aec8bfc8ff93fec40de20
 
 
 
