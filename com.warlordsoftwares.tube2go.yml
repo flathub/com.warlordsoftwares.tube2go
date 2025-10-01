@@ -1,9 +1,9 @@
 app-id: com.warlordsoftwares.tube2go
 runtime: org.kde.Platform
-runtime-version: 5.15-24.08
+runtime-version: 5.15-23.08
 sdk: org.kde.Sdk
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: '5.15-24.08'
+base-version: '5.15-23.08'
 command: tube2go.sh
 
 tags:
@@ -65,7 +65,7 @@ modules:
     sources:
       - type: archive
         url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_TUBE2GO.tar.gz
-        sha256: fa5695b7f627e84f27c445e014963d1862e3bcf251a4bf4aaea1204a463a7dbd
+        sha256: 6614381996b6140d42d81bec5b5190fc59627c1a2cfd1753ad89fc26c75e79ec
 
 
 
