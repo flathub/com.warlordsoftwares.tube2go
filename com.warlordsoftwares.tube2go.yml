@@ -51,6 +51,8 @@ modules:
   - mpv.json
   - python3-req.json
   - python3-yt-dlp.json
+  - deno.json
+  - yt-dlp-ejs.json
 
   - name: tube2go
     buildsystem: simple
