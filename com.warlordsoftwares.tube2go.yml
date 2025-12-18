@@ -65,7 +65,7 @@ modules:
     sources:
       - type: archive
         url: https://warlordsoftwares.com/static/app_builds/flatpak/FLATPAK_TUBE2GO.tar.gz
-        sha256: 1f86ee861dc180b73bad5119bdb40156b777750aaf9d32a5f88bf78a16456097
+        sha256: 2614afab2fc5324b97bb6120faa220cbfa50e65feacdfcf1932d8cf5f71f76a3
 
 
 
